@@ -1,0 +1,43 @@
+<?php
+
+//-----------------CONECTION------------------
+try {
+    $pdo = new PDO("mysql:dbname=IMOVEIS;host=localhost", "root","");//code...
+} catch (PDOException $e) {
+   echo "Erro com banco de dados:".$e->getMessage();
+}catch(Exception $e){
+    echo "Erro generico: ".$e->getMessage;
+}
+
+//----------------------INSERT------------------
+// $res = $pdo->prepare("INSERT INTO inquilino(nome, telefone, cpf, email, tipo_fiador) 
+// VALUES (:n, :t, :c, :e, :tf)");
+// $res->bindValue(":n","name");
+// $res->bindValue(":t","0000000000");
+// $res->bindValue(":c","00000000-00");
+// $res->bindValue(":e","emai@gmail.com");
+// $res->bindValue(":tf","carta de fiança");
+// $res->execute();
+
+//$pdo->query("INSERT INTO inquilino(nome, telefone, cpf, email, tipo_fiador) VALUES('','','','','')");
+
+//-----------------------DELETE E UPDATE--------------
+//$cmd = $pdo->query("DELETE FROM inquilino WHERE id = '2'");
+//$cmd = $pdo->query("UPDATE inquilino SET cpf = '', WHERE id =''");
+
+//-----------------------SELECT------------------------
+
+// $cmd = $pdo->prepare("SELECT * FROM inquilino WHERE id = :id");
+// $cmd->bindValue(":id", 1);
+// $cmd->execute();
+// $resultado = $cmd->fetch(PDO::FETCH_ASSOC);//apenas o nome das colunas
+// // $cmd->fetch();               //selecionar especifico
+// // $cmd->fetchAll();            //selecionar tudo
+
+// // print_r($resultado);//fazendo testes
+
+// foreach ($resultado as $key => $value){
+//     echo $key.": ".$value."<br>";
+// }
+?>
+
